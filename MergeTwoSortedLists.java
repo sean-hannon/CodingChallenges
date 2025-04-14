@@ -19,11 +19,11 @@ public class MergeTwoSortedLists {
         b.add(8);
         b.add(9);
         List result = mergeTwoLists(a, b, 3);
-        System.out.println();
     }
 
     public static List<Integer> mergeTwoLists(List<Integer> a, List<Integer> b, int maxResultLength) throws Exception {
         List<Integer> result = new ArrayList<>();
+        //Two pointers to track locations in lists.
         int i = 0, j = 0;
 
         while (result.size() < maxResultLength && i < a.size() && j < b.size()) {
@@ -36,6 +36,8 @@ public class MergeTwoSortedLists {
             }
         }
 
+        //Add remaining values to the result list if the list isn't max result length yet
+        
         while (result.size() < maxResultLength && i < a.size()) {
             result.add(a.get(i));
             i++;
